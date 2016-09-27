@@ -1,8 +1,24 @@
+/* VARIABLES AND PARAMETERS */
+var modes = ["auto","cool","fan","dry","heat"];
+for (var i=0; i < modes.length; i++) {
+    var per_mode = modes[i]
+};
+
+function getMode (myStr) {
+    var end = myStr.lastIndexOf('-');
+    var mode = myStr.slice(end+1);
+    return mode
+};
+
+
+
+/* JQUERY */
 $(document).ready(function(){
     $(".nav-pills li").click(function(){
         $(".active").removeClass("active");
         $(this).addClass("active");
     });
+
     /* button for navigating sections */    
     $(".btn1").click(function(){
         $("#remote-profile").show(350);
@@ -16,12 +32,35 @@ $(document).ready(function(){
     $(".td").click(function(){
         $("#sm").show(350);
     });
-    
+/*    
     $(".btn-done-features").click(function(){
         $("#remote-profile").hide();
         $("#sm").hide();
         $(".features").hide();
         $(".definition").show(350);
+    });
+*/
+    $(".btn-done-features").click(function(){
+        var fan_features = [];
+        var louver_features = [];
+        var swing_features = [];
+        var all = {'fan_features':fan_features,'louver_features':louver_features,'swing_features':swing_features};
+        
+        $.each($("input[name='fan']:checked"), function(){
+            fan_features.push($(this).val());
+        });
+        
+        $.each($("input[name='louver']:checked"), function(){
+            louver_features.push($(this).val());
+        });
+        
+        $.each($("input[name='swing']:checked"), function(){
+            swing_features.push($(this).val());
+        });
+    
+        
+        console.log(all)        
+        
     });
     
     $(".btn-done-definitions").click(function(){
@@ -40,8 +79,6 @@ $(document).ready(function(){
         $(".create-structure").show(350);
     }); 
     
-    
-
     /* button for navigating features */
     $("#m-auto").click(function(){
         $("#f-auto").show(350);
@@ -83,43 +120,41 @@ $(document).ready(function(){
         $("#f-heat").show(350);
     });     
     
-     /* button for adding features */
-    $("#add-feature-mode").click(function(){
-        var text = $(".newCheckText").val();
-        $("ul.nav").append('<li id=""><a href="#">' + text + '</a></li>');
-        $(".newCheckText").val('');
-    });
-    
-    $("#add-feature-fan").click(function(){
-        var text = $(".newCheckText1").val();
-        $(".control-group1").append('<label class="checkbox"><input value="0" type="checkbox">' + text + '</label>');
-        $(".newCheckText1").val('');
-    });
-    
-    $("#add-feature-louver").click(function(){
-        var text = $(".newCheckText2").val();
-        $(".control-group2").append('<label class="checkbox"><input value="0" type="checkbox">' + text + '</label>');
-        $(".newCheckText2").val('');
+     /* button for adding features per mode */  
+    $(".add-feature-fan").click(function(){
+        var mode = getMode($(this).attr('class'));
+        var text = $('.f-fan-value-m-'+mode+'').val();
+        if (text != '') {
+            $(".feature-fan").append('<label class="checkbox"><input name="fan" value='+ text +' type="checkbox">' + text + '</label>');
+            $('.f-fan-value-m-'+mode+'').val('');
+        }
+        else {}
     });
 
-    $("#add-feature-swing").click(function(){
-        var text = $(".newCheckText3").val();
-        $(".control-group3").append('<label class="checkbox"><input value="0" type="checkbox">' + text + '</label>');
-        $(".newCheckText3").val('');
+    $(".add-feature-louver").click(function(){
+        var mode = getMode($(this).attr('class'));
+        var text = $('.f-louver-value-m-'+mode+'').val();
+        if (text != '') {
+            $(".feature-louver").append('<label class="checkbox"><input value='+ text +' type="checkbox">' + text + '</label>');
+            $('.f-louver-value-m-'+mode+'').val('');
+        }
+        else {}
     });
-    
-    $("#add-feature-of").click(function(){
-        var text = $(".newCheckText4").val();
-        $(".control-group4").append('<label class="checkbox"><input value="0" type="checkbox">' + text + '</label>');
-        $(".newCheckText4").val('');
+
+    $(".add-feature-swing").click(function(){
+        var mode = getMode($(this).attr('class'));
+        var text = $('.f-swing-value-m-'+mode+'').val();
+        if (text != '') {
+            $(".feature-swing").append('<label class="checkbox"><input value='+ text +' type="checkbox">' + text + '</label>');
+            $('.f-swing-value-m-'+mode+'').val('');
+        }
+        else {}
     });
 
     $("#add-feature-cs").click(function(){
         var text = $(".newCheckText5").val();
         $(".cs").append('<label class="radio"><input type="radio" name="optradio">' + text + '</label>');
         $(".newCheckText5").val('');
-    });    
+    });       
     
-    
-    
-}); // end //
+});
