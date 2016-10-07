@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AmbiLabs: School of Witchcraft and Wizardry</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome and Google Fonts -->
+    <link rel="stylesheet" href="fonts/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+      
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a id="logo" href="https://www.ambiclimate.com/" target="_blank"><img src="images/logo.png" alt="ambiclimate-logo" height="50" width="175"></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+      </nav>
+      
+      <section id="cover">
+        <div id="cover-caption">
+            <div class="container">
+                <h1>Welcome to IR-Wizard</h1>
+                <p>Admodum de magna, ingeniis sint eu senserit consectetur, minim e incurreret, illum appellat transferrem.</p>
+            </div>
+            <div class="container">
+                <div class="col-md-4">
+                    <h3>Create Remote Profile</h3>
+                    <button type="button" class="btn btn-md btn1">Expelliarmus</button>
+                </div>
+                <div class="col-md-4">
+                    <h3>Adhoc Capture</h3>
+                    <button type="button" class="btn btn-md btn2">Riddikulus</button>
+                </div>
+                <div class="col-md-4">
+                    <h3>Bit Order Conversion</h3>
+                    <button type="button" class="btn btn-md btn3">Alohomora</button>
+                </div>
+            </div>
+
+            <div id="remote-profile">
+                  <form class="form-horizontal">
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="manufacture">Manufacture: </label>
+                          <div class="col-sm-5">
+                              <input type="text" class="form-control" id="manufacture" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="modelNumber">Model #: </label>
+                          <div class="col-sm-5">
+                          <input type="text" class="form-control" id="modelNumber" required>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label col-sm-2" for="remoteTime">Time Display:</label>
+                          <div class="col-sm-5">
+                          <label class="radio-inline td"><input type="radio" name="optradio">Yes</label>
+                          <label class="radio-inline td"><input type="radio" name="optradio">No</label>
+                          </div>
+                      </div>
+                  </form>
+            </div>
+        </div>
+      </section>
+      
+      <div class="col-md-2" id="sm">
+        <h4>Select Mode</h4>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active" id="m-auto"><a href="#">Auto</a></li>
+          <li id="m-cool"><a href="#">Cool</a></li>
+          <li id="m-dry"><a href="#">Dry</a></li>
+          <li id="m-fan"><a href="#">Fan</a></li>
+          <li id="m-heat"><a href="#">Heat</a></li>
+        </ul>
+        <div class="done-features">
+            <button class="btn btn-md btn-success btn-done-features">CREATE</button>
+        </div>  
+      </div>
+      
+    <div id="f-auto" class="features container-fluid col-md-offset-2"> <!--container for AUTO features-->
+        <div class="col-md-3">
+           <h4>Temperature</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">None</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;C</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;F</label>
+            <form class="form-inline tf">
+              <div class="form-group">
+                <label for="minTemp">minimum: </label>
+                <input type="number" name='auto-temp-min-value' class="form-control minTemp">
+              </div>
+              <div class="form-group">
+                <label for="maxTemp">maximum: </label>
+                <input type="number" name='auto-temp-max-value' class="form-control maxTemp">
+              </div>
+              <div class="form-group">
+                <label for="increment">increment: </label>
+                <input type="number" name='auto-temp-increment' class="form-control increment">
+              </div> 
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4>Fan</h4>
+                <div class="cg feature-fan">
+                    <label class="checkbox"><input name='fan-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='fan-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='fan-value' value="high" type="checkbox">high</label>
+                    <label class="checkbox"><input name='fan-value' value="med-high" type="checkbox">med-high</label>
+                    <label class="checkbox"><input name='fan-value' value="med" type="checkbox">med</label>
+                    <label class="checkbox"><input name='fan-value' value="med-low" type="checkbox">med-low</label>
+                    <label class="checkbox"><input name='fan-value' value="low" type="checkbox">low</label>
+                    <label class="checkbox"><input name='fan-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='fan-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='fan-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-fan-value-m-auto add-feature"><button class="btn btn-sm btn-success add-feature-fan -auto"><i class="fa fa-plus" aria-hidden="true"></i></button>    
+        </div> 
+        <div class="col-md-3">
+            <h4>Louver</h4>
+                <div class="cg feature-louver">
+                    <label class="checkbox"><input name='louver-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='louver-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='louver-value' value="up" type="checkbox">up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-up" type="checkbox">mid-up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-down" type="checkbox">mid-down</label>
+                    <label class="checkbox"><input name='louver-value' value="down" type="checkbox">down</label>
+                    <label class="checkbox"><input name='louver-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='louver-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='louver-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-louver-value-m-auto add-feature"><button class="btn btn-sm btn-success add-feature-louver -auto"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+        <div class="col-md-3">
+            <h4>Swing</h4>
+                <div class="cg feature-swing">
+                    <label class="checkbox"><input name='swing-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='swing-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='swing-value' value="left" type="checkbox">left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-left" type="checkbox">mid-left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-right" type="checkbox">mid-right</label>
+                    <label class="checkbox"><input name='swing-value' value="right" type="checkbox">right</label>
+                    <label class="checkbox"><input name='swing-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='swing-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='swing-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-swing-value-m-auto add-feature"><button class="btn btn-sm btn-success add-feature-swing -auto"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+    </div> <!-- end of #f-auto -->   
+            
+    <div id="f-cool" class="features container-fluid col-md-offset-2"> <!--container for COOL features-->
+        <div class="col-md-3">
+           <h4>Temperature</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">None</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;C</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;F</label>
+            <form class="form-inline tf">
+              <div class="form-group">
+                <label for="minTemp">minimum: </label>
+                <input type="number" name='cool-temp-min-value' class="form-control minTemp">
+              </div>
+              <div class="form-group">
+                <label for="maxTemp">maximum: </label>
+                <input type="number" name='cool-temp-max-value' class="form-control maxTemp">
+              </div>
+              <div class="form-group">
+                <label for="increment">increment: </label>
+                <input type="number" name='cool-temp-increment' class="form-control increment">
+              </div> 
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4>Fan</h4>
+                <div class="cg feature-fan">
+                    <label class="checkbox"><input name='fan-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='fan-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='fan-value' value="high" type="checkbox">high</label>
+                    <label class="checkbox"><input name='fan-value' value="med-high" type="checkbox">med-high</label>
+                    <label class="checkbox"><input name='fan-value' value="med" type="checkbox">med</label>
+                    <label class="checkbox"><input name='fan-value' value="med-low" type="checkbox">med-low</label>
+                    <label class="checkbox"><input name='fan-value' value="low" type="checkbox">low</label>
+                    <label class="checkbox"><input name='fan-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='fan-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='fan-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-fan-value-m-cool add-feature"><button class="btn btn-sm btn-success add-feature-fan -cool"><i class="fa fa-plus" aria-hidden="true"></i></button>    
+        </div> 
+        <div class="col-md-3">
+            <h4>Louver</h4>
+                <div class="cg feature-louver">
+                    <label class="checkbox"><input name='louver-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='louver-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='louver-value' value="up" type="checkbox">up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-up" type="checkbox">mid-up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-down" type="checkbox">mid-down</label>
+                    <label class="checkbox"><input name='louver-value' value="down" type="checkbox">down</label>
+                    <label class="checkbox"><input name='louver-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='louver-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='louver-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-louver-value-m-cool add-feature"><button class="btn btn-sm btn-success add-feature-louver -cool"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+        <div class="col-md-3">
+            <h4>Swing</h4>
+                <div class="cg feature-swing">
+                    <label class="checkbox"><input name='swing-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='swing-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='swing-value' value="left" type="checkbox">left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-left" type="checkbox">mid-left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-right" type="checkbox">mid-right</label>
+                    <label class="checkbox"><input name='swing-value' value="right" type="checkbox">right</label>
+                    <label class="checkbox"><input name='swing-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='swing-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='swing-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-swing-value-m-cool add-feature"><button class="btn btn-sm btn-success add-feature-swing -cool"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+    </div> <!-- end of #f-cool -->   
+            
+    <div id="f-dry" class="features container-fluid col-md-offset-2"> <!--container for DRY features-->
+        <div class="col-md-3">
+           <h4>Temperature</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">None</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;C</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;F</label>
+            <form class="form-inline tf">
+              <div class="form-group">
+                <label for="minTemp">minimum: </label>
+                <input type="number" class="form-control" id="minTemp">
+              </div>
+              <div class="form-group">
+                <label for="maxTemp">maximum: </label>
+                <input type="number" class="form-control" id="maxTemp">
+              </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4>Fan</h4>
+                <div class="cg feature-fan">
+                    <label class="checkbox"><input name='fan-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='fan-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='fan-value' value="high" type="checkbox">high</label>
+                    <label class="checkbox"><input name='fan-value' value="med-high" type="checkbox">med-high</label>
+                    <label class="checkbox"><input name='fan-value' value="med" type="checkbox">med</label>
+                    <label class="checkbox"><input name='fan-value' value="med-low" type="checkbox">med-low</label>
+                    <label class="checkbox"><input name='fan-value' value="low" type="checkbox">low</label>
+                    <label class="checkbox"><input name='fan-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='fan-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='fan-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-fan-value-m-dry add-feature"><button class="btn btn-sm btn-success add-feature-fan -dry"><i class="fa fa-plus" aria-hidden="true"></i></button>    
+        </div> 
+        <div class="col-md-3">
+            <h4>Louver</h4>
+                <div class="cg feature-louver">
+                    <label class="checkbox"><input name='louver-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='louver-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='louver-value' value="up" type="checkbox">up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-up" type="checkbox">mid-up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-down" type="checkbox">mid-down</label>
+                    <label class="checkbox"><input name='louver-value' value="down" type="checkbox">down</label>
+                    <label class="checkbox"><input name='louver-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='louver-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='louver-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-louver-value-m-dry add-feature"><button class="btn btn-sm btn-success add-feature-louver -dry"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+        <div class="col-md-3">
+            <h4>Swing</h4>
+                <div class="cg feature-swing">
+                    <label class="checkbox"><input name='swing-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='swing-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='swing-value' value="left" type="checkbox">left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-left" type="checkbox">mid-left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-right" type="checkbox">mid-right</label>
+                    <label class="checkbox"><input name='swing-value' value="right" type="checkbox">right</label>
+                    <label class="checkbox"><input name='swing-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='swing-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='swing-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-swing-value-m-dry add-feature"><button class="btn btn-sm btn-success add-feature-swing -dry"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+    </div> <!-- end of #f-dry -->    
+            
+    <div id="f-fan" class="features container-fluid col-md-offset-2"> <!--container for FAN features-->
+        <div class="col-md-3">
+           <h4>Temperature</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">None</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;C</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;F</label>
+            <form class="form-inline tf">
+              <div class="form-group">
+                <label for="minTemp">minimum: </label>
+                <input type="number" class="form-control" id="minTemp">
+              </div>
+              <div class="form-group">
+                <label for="maxTemp">maximum: </label>
+                <input type="number" class="form-control" id="maxTemp">
+              </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4>Fan</h4>
+                <div class="cg feature-fan">
+                    <label class="checkbox"><input name='fan-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='fan-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='fan-value' value="high" type="checkbox">high</label>
+                    <label class="checkbox"><input name='fan-value' value="med-high" type="checkbox">med-high</label>
+                    <label class="checkbox"><input name='fan-value' value="med" type="checkbox">med</label>
+                    <label class="checkbox"><input name='fan-value' value="med-low" type="checkbox">med-low</label>
+                    <label class="checkbox"><input name='fan-value' value="low" type="checkbox">low</label>
+                    <label class="checkbox"><input name='fan-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='fan-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='fan-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-fan-value-m-fan add-feature"><button class="btn btn-sm btn-success add-feature-fan -fan"><i class="fa fa-plus" aria-hidden="true"></i></button>    
+        </div> 
+        <div class="col-md-3">
+            <h4>Louver</h4>
+                <div class="cg feature-louver">
+                    <label class="checkbox"><input name='louver-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='louver-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='louver-value' value="up" type="checkbox">up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-up" type="checkbox">mid-up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-down" type="checkbox">mid-down</label>
+                    <label class="checkbox"><input name='louver-value' value="down" type="checkbox">down</label>
+                    <label class="checkbox"><input name='louver-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='louver-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='louver-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-louver-value-m-fan add-feature"><button class="btn btn-sm btn-success add-feature-louver -fan"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+        <div class="col-md-3">
+            <h4>Swing</h4>
+                <div class="cg feature-swing">
+                    <label class="checkbox"><input name='swing-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='swing-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='swing-value' value="left" type="checkbox">left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-left" type="checkbox">mid-left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-right" type="checkbox">mid-right</label>
+                    <label class="checkbox"><input name='swing-value' value="right" type="checkbox">right</label>
+                    <label class="checkbox"><input name='swing-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='swing-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='swing-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-swing-value-m-fan add-feature"><button class="btn btn-sm btn-success add-feature-swing -fan"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+    </div> <!-- end of #f-fan -->    
+            
+    <div id="f-heat" class="features container-fluid col-md-offset-2"> <!--container for HEAT features-->
+        <div class="col-md-3">
+           <h4>Temperature</h4>
+            <label class="radio-inline"><input type="radio" name="optradio">None</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;C</label>
+            <label class="radio-inline"><input type="radio" name="optradio">&deg;F</label>
+            <form class="form-inline tf">
+              <div class="form-group">
+                <label for="minTemp">minimum: </label>
+                <input type="number" class="form-control" id="minTemp">
+              </div>
+              <div class="form-group">
+                <label for="maxTemp">maximum: </label>
+                <input type="number" class="form-control" id="maxTemp">
+              </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4>Fan</h4>
+                <div class="cg feature-fan">
+                    <label class="checkbox"><input name='fan-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='fan-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='fan-value' value="high" type="checkbox">high</label>
+                    <label class="checkbox"><input name='fan-value' value="med-high" type="checkbox">med-high</label>
+                    <label class="checkbox"><input name='fan-value' value="med" type="checkbox">med</label>
+                    <label class="checkbox"><input name='fan-value' value="med-low" type="checkbox">med-low</label>
+                    <label class="checkbox"><input name='fan-value' value="low" type="checkbox">low</label>
+                    <label class="checkbox"><input name='fan-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='fan-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='fan-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-fan-value-m-heat add-feature"><button class="btn btn-sm btn-success add-feature-fan -heat"><i class="fa fa-plus" aria-hidden="true"></i></button>    
+        </div> 
+        <div class="col-md-3">
+            <h4>Louver</h4>
+                <div class="cg feature-louver">
+                    <label class="checkbox"><input name='louver-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='louver-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='louver-value' value="up" type="checkbox">up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-up" type="checkbox">mid-up</label>
+                    <label class="checkbox"><input name='louver-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='louver-value' value="mid-down" type="checkbox">mid-down</label>
+                    <label class="checkbox"><input name='louver-value' value="down" type="checkbox">down</label>
+                    <label class="checkbox"><input name='louver-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='louver-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='louver-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-louver-value-m-heat add-feature"><button class="btn btn-sm btn-success add-feature-louver -heat"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+        <div class="col-md-3">
+            <h4>Swing</h4>
+                <div class="cg feature-swing">
+                    <label class="checkbox"><input name='swing-value' value="none" type="checkbox">none</label>
+                    <label class="checkbox"><input name='swing-value' value="auto" type="checkbox">auto</label>
+                    <label class="checkbox"><input name='swing-value' value="left" type="checkbox">left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-left" type="checkbox">mid-left</label>
+                    <label class="checkbox"><input name='swing-value' value="mid" type="checkbox">mid</label>
+                    <label class="checkbox"><input name='swing-value' value="mid-right" type="checkbox">mid-right</label>
+                    <label class="checkbox"><input name='swing-value' value="right" type="checkbox">right</label>
+                    <label class="checkbox"><input name='swing-value' value="quiet" type="checkbox">quiet</label>
+                    <label class="checkbox"><input name='swing-value' value="oscillate" type="checkbox">oscillate</label>
+                    <label class="checkbox"><input name='swing-value' value="off" type="checkbox">off</label>
+                </div>    
+                <input type="text" class="f-swing-value-m-heat add-feature"><button class="btn btn-sm btn-success add-feature-swing -heat"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+        </div>
+    </div> <!-- end of #f-heat -->   
+            
+    <div class="container-fluid definition">
+        <h2>DEFINITIONS</h2>
+        <p>Convert and input all features to their corresponding binary-to-decimal value.</p>
+        <p><small>Please refer to your "analyze.txt" for the binary values.</small></p>
+        <div class="definition-value container-fluid">
+            <div class="mode-def col-md-2">
+                <h4>Modes</h4>
+                <form class="insert_mode">
+                    <label class="">auto:<input value="" type="text"></label>
+                    <label class="">cool:<input value="" type="text"></label>
+                    <label class="">dry:<input value="" type="text"></label>
+                    <label class="">fan:<input value="" type="text"></label>
+                    <label class="">heat:<input value="" type="text"></label>
+                </form>
+            </div>
+            <div class="col-md-offset-2">
+                <div class="mode-def col-md-3">
+                    <h4>Temperature</h4>
+                    <form class="insert_temp">
+                    </form>
+                </div>
+                <div class="mode-def col-md-3">
+                    <h4>Fan</h4>
+                    <form class="insert_fan">
+                    </form>
+                </div>
+                <div class="mode-def col-md-3">
+                    <h4>Louver</h4>
+                    <form class="insert_louver">
+                    </form>
+                </div>
+                <div class="mode-def col-md-3">
+                    <h4>Swing</h4>
+                    <form class="insert_swing">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="done-definitions col-md-12">
+            <button class="btn btn-md btn-success btn-done-definitions" data-spy="affix">SUBMIT</button>
+        </div>
+    </div> <!-- end of definition -->
+    
+    <div class="container-fluid cs-irp">
+        <div class="create-checksum col-md-3">
+            <h3>Checksum and Structure</h3>
+            <h4>Create Checksum</h4>
+            <div class="cs-content">
+                <div class="form-group col-md-6 cs-function">
+                    <label for="sel1">Select Function</label>
+                    <select class="form-control" id="sel1">
+                        <option>sum_offset</option>
+                        <option>xor_offset</option>
+                        <option>sum_minus</option>
+                        <option>sum_minus2</option>
+                        <option>xor_offset_extra</option>
+                    </select>
+                    <div class="cs-function-content">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="">Bit Size:</label>
+                                <div class="col-sm-5">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="">Offset:</label>
+                                <div class="col-sm-5">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="">Modulo:</label>
+                                <div class="col-sm-5">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="">Minus:</label>
+                                <div class="col-sm-5">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </div> <!-- end of cs-function -->
+                <div class="form-group col-md-6 cs-eval">
+                        <div class="form-group">
+                            <label for="">Place Eval Here:</label>
+                            <textarea class="form-control" rows="7" id=""></textarea>
+                        </div>
+                </div>
+                <div class="done-cs col-md-12">
+                    <button class="btn btn-md btn-success btn-done-cs">SUBMIT</button>
+                </div>
+            </div>
+        </div> <!-- end of create-checksum -->
+        <div class="create-structure col-md-9">
+            <h3>Checksum and Structure</h3>
+            <h4>Code Structure</h4>
+            <div class="irp-content">
+                <div class="irp-default">
+                    <h3>Default Irp</h3>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">Checksum Index:</label>
+                            <div class="col-sm-1">
+                                <input type="" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">IRP String:</label>
+                            <div class="col-sm-10">
+                                <input type="" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">Reverse:</label>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Key:</label>
+                                <div class="col-sm-1">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Message Part:</label>
+                                <div class="col-sm-1">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Value:</label>
+                                <div class="col-sm-1">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="irp-conditional">
+                    <h3>Conditional</h3>
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">Checksum Index:</label>
+                            <div class="col-sm-1">
+                                <input type="" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">IRP String:</label>
+                            <div class="col-sm-10">
+                                <input type="" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for=""><button class="btn btn-xs btn-add-cond"><i class="fa fa-plus" aria-hidden="true"></i></button>Condition:</label>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">a:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">b:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">group:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">operator:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="">Reverse:</label>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Key:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Message Part:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label col-sm-2" for="">Value:</label>
+                                <div class="col-sm-2">
+                                    <input type="" class="form-control" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="done-cs col-md-12">
+                        <button class="btn btn-md btn-success btn-done-irp">DONE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end of cs-irp -->
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mycontroller.js"></script>
+  </body>
+</html>

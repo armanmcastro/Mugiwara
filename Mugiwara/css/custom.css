@@ -3,180 +3,112 @@ html, body {
   background-attachment: fixed;
   background-size: cover;
   text-align: center;
+  font-family: sans-serif;
+  color: white;
 }
 
-#logo {
-    width: 100%;
-    height: auto;
+h4 {
+    font-family: 'Cinzel', serif; 
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    color: #008066;
+    background: rgba(0, 0, 0, .6); 
 }
 
+.form-control {
+    background-color: #b3b3b3;
+    color: black;
+}
 
-/* navbar */
-.navbar, .navbar li a {
+/* NAVBAR */
+.navbar, .nav a {
     background-color: #222;
     color: white;
 }
 
-.navbar li a:hover {
+.nav li a:hover,
+.nav li a:focus {
     background: none;
     font-weight: bold;
     color: #008066;
-}
-
-.btn-md {
-    background-color: black;
-    opacity: .6;
-    border: 1px solid #0066cc;
-    -webkit-animation: x 5s infinite;
-    animation: x 5s infinite;
-}
-
-.btn-md:hover, .btn-md:focus {
-    background-color: black;
-    color: white;
-    opacity: 1;
-    font-weight: 700;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes x {
-    50% {border-color: yellow;}
-}
-
-/* Standard syntax */
-@keyframes x {
-    50% {border-color: yellow;}
 }
 
 #cover {
     font-family: 'Cinzel', serif; 
     background: #222 url("../images/hp.jpg") 0% 10% no-repeat;
     background-size: cover;
-    color: white;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+/* BUTTONS */
+.btn {
+    background-color: black;
+    opacity: .6;
+    border: 2px solid #0066cc;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #008066;
+    opacity: 1;
+    font-size: bold;
 }
 
 #remote-profile {
-    font-family: sans-serif;
-    font-weight: normal;
-    display: none;
     background: rgba(0, 0, 0, .6);
-    padding-top: 20px;
-    margin-left: -45px;
+    margin-top: 20px;
+    display: none;
 }
 
-/* SELECT MODE */
-#sm {
+/* MODE */
+#mode {
     border: 10px solid #0059b3;
     border-radius: 5px;
     padding-bottom: 5px;
+    /*
     display: none;
+    */
 }
 
-#sm .nav-pills li {
-    background-color: black;
-    opacity: .8;
-    color:white;
+#mode .nav-pills li {
     border: 1px solid black;
 }
 
-#sm .nav-pills li a:hover {
+#mode .nav-pills li a:hover {
     background-color:#b3d9ff;
     color: black;
-    font-weight: bold;
 }
-
-#sm h4, h4 {
-    font-family: 'Cinzel', serif; 
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 5px;
-    color: #008066;
-}
-
-#sm h4 {
-    background: none;
-}
-
-h4 {
-    background: rgba(0, 0, 0, .6); 
-}
-
 
 /* FEATURES */
 
 .features {
-    color: #e6e6e6;
     background: rgba(0, 0, 0, .6);
+    /*
+    display: none;
+    */
 }
 
-#f-auto,
-#f-cool,
-#f-dry,
-#f-fan,
-#f-heat {
-    /*display: none;*/ 
+.feature-temp label {
+    font-weight: normal;
+ 
 }
 
-.form-control, .of .form-group input {
-    background-color: #b3b3b3;
-    color: black;
+.feature-temp .form-control {
+    text-align: center;
 }
 
-.done-features {
-    margin-top: 12px;
+.temp-parameters {
+    text-align: right;
 }
 
-.btn-done-features {
-    border-radius: 10px;
-    color:white;
-}
-
-.cg .checkbox {
+.checkbox {
     text-align: left;
     margin-right: 40px;
     margin-left: 45px
 }
 
-/*Other Features*/
-
-.control-group4 .checkbox {
-    margin-left: 180px;
-}
-
-input.newCheckText4 {
-    width: 20%;    
-}
-
-.of .form-group {
-    margin-left: -45px;
-}
-
-
-input.newCheckText {
-    width: 100px;
-    text-align: center;
-}
-
-.tf {
-    padding-top: 10px;
-    padding-left: 20px;
-}
-
-.tf label {
-    font-weight: normal;
-    vertical-align: super;
-}
-
-.tf .form-control {
-    width: 70px;
-    height: 29px;
-    margin-bottom: 10px;
-}
-
-
-.add-feature,
-.newCheckText4 {
+.add-feature {
     background-color: #b3b3b3;
     color: black;
     width: 50%;
@@ -184,24 +116,13 @@ input.newCheckText {
     text-align: center;
 }
 
-.btn-of, .btn-add-cond {
-    background: none;
-}
-
-.btn-of:hover,
-.btn-of:focus,
-.btn-add-cond:hover,
-.btn-add-cond:focus { 
-    color: #80ff80;
-}
-
-
 /* DEFINITION */
 
 .definition {
-    color:white;
     font-family: 'Cinzel', serif;  
+    /*
     display: none;
+    */
 }
 
 .definition-value {
@@ -215,10 +136,10 @@ input.newCheckText {
 
 .definition form {
     text-align: right;
-    margin-right: 50px;
-    font-weight: normal;
 }
+
 .definition label {
+    margin-right: 85px;
     font-family: sans-serif;
 }
 
@@ -227,25 +148,15 @@ input.newCheckText {
     background-color:#b3b3b3;
     width: 80px;
     text-align: center;
+    font-weight: normal;
     margin-left: 5px;
-}
-
-.done-definitions {
-    padding-bottom: 20px;
-    font-family: sans-serif;
 }
 
 .affix {
     bottom: 5px;
 }
 
-
-/* checksum and irp */
-
-.cs-irp {
-    color:white; 
-    text-align: center; 
-}
+/* CHECKSUM / IRP */
 
 .cs-irp h3 {
     font-family: 'Cinzel', serif; 
@@ -253,20 +164,20 @@ input.newCheckText {
 
 .cs-function-content {
     margin-top: 5px;
-}
-
-.cs-function-content label {
     font-size: 12px;
     margin-left: 10px;
 }
 
 .cs-function-content input {
-    height: 30px;
+    text-align: center;
+    
 }
 
 .cs-function-content .form-group {
     margin-bottom: 2px;
 }
+
+
 
 .irp-default input,
 .irp-conditional input {
@@ -279,10 +190,28 @@ input.newCheckText {
 }
 
 .create-checksum, .create-structure {
+    /*
     display: none;
+    */
 }
 
 .irp-content .form-group {
     margin-bottom: 5px;
 }
+
+.condition-a, .condition-b {
+    margin-top: 5px;
+}
+
+.btn-add-cond, .btn-new-cond {
+    background: none;
+}
+
+.btn-of:hover,
+.btn-of:focus,
+.btn-add-cond:hover,
+.btn-add-cond:focus,
+.btn-new-cond:hover,
+.btn-new-cond:focus{ 
+    color: #80ff80;
 }
